@@ -1,4 +1,4 @@
-# vue-test
+# music-theory
 
 ## Project setup
 ```
