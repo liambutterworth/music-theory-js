@@ -2,34 +2,17 @@ import Scale from './Scale';
 import Note from './Note';
 
 class Key {
-    constructor(root, signature) {
+    constructor(root, quality = 'major') {
         this.root = root instanceof Note ? root : new Note(root);
+        this.signature = this.root.getSignature();
 
-        if (typeof signature === 'undefined') {
-            this.signature = /#/.test(this.root.symbol) ? 'sharp' : 'flat';
-        } else {
-            this.signature = signature;
+        if (!['major', 'minor'].includes(quality)) {
+            throw 'key quality can only be major or minor';
         }
 
-        this.ionian = new Scale(this.root, 'ionian', this.signature);
-        this.dorian = new Scale(this.ionian.notes[1], 'dorian', this.signature);
-        this.phrygian = new Scale(this.ionian.notes[2], 'phrygian', this.signature);
-        this.lydian = new Scale(this.ionian.notes[3], 'lydian', this.signature);
-        this.mixolydian = new Scale(this.ionian.notes[4], 'mixolydian', this.signature);
-        this.aeolian = new Scale(this.ionian.notes[5], 'aeolian', this.signature);
-        this.locrian = new Scale(this.ionian.notes[6], 'locrian', this.signature);
-
-        this.notes = this.ionian.notes;
-
-        this.modes = [
-            this.ionian,
-            this.dorian,
-            this.phrygian,
-            this.lydian,
-            this.mixolydian,
-            this.aeolian,
-            this.locrian,
-        ];
+        this.scale = new Scale(this.root, quality, this.signature);
+        this.notes = this.scale.notes;
+        this.modes = this.scale.getModes();
     }
 }
 

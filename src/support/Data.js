@@ -25,8 +25,12 @@ export default {
 
     intervals: {
         all() {
+            return data.intervals;
+        },
+
+        unique() {
             return data.intervals.filter(interval => {
-                return /^[PMm]/.test(interval.symbol);
+                return /^[PMm]|d5/.test(interval.symbol);
             });
         },
 
@@ -38,9 +42,17 @@ export default {
             return symbols.map(symbol => this.find(symbol));
         },
 
+        findByDegree(degree) {
+            return this.all().find(interval => interval.degree === degree);
+        },
+
         findBySteps(steps) {
             return this.all().find(interval => interval.steps === steps);
         },
+
+        filterBySteps() {
+            return this.all().filter(interval => interval.steps === steps);
+        }
     },
 
     degrees: {
@@ -50,6 +62,10 @@ export default {
 
         find(symbol) {
             return this.all().find(degree => degree.symbol === symbol);
+        },
+
+        findByInterval(interval) {
+            return this.all().find(degree => degree.interval === interval);
         },
 
         findByArray(symbols) {
@@ -75,5 +91,19 @@ export default {
         find(name) {
             return this.all().find(scale => scale.name === name);
         },
+
+        findByDegrees(degrees) {
+            return this.all().find(scale => {
+                let found;
+
+                if (scale.degrees.length === degrees.length) {
+                    found = scale.degrees.every(degree => degrees.includes(degree));
+                } else {
+                    found = false;
+                }
+
+                return found;
+            });
+        }
     },
 };

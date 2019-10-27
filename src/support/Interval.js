@@ -1,9 +1,11 @@
 import Data from './Data';
+import Degree from './Degree';
 import Note from './Note';
 
 class Interval {
     static byDegree(degree) {
-        return new Interval(degree.interval);
+        const data = Data.intervals.findByDegree(degree);
+        return new Interval(data);
     }
 
     static byNotes(root, target) {
@@ -24,9 +26,38 @@ class Interval {
             this.data = data;
             this.symbol = data.symbol;
         }
+    }
 
-        this.name = this.data.name;
-        this.steps = this.data.steps;
+    getLetter() {
+        return this.symbol.match(/([dmMPA])[1-8]/)[1];
+    }
+
+    getNumber() {
+        return parseInt(this.symbol.match(/[dmMPA]([1-8])/)[1]);
+    }
+
+    isDiminished() {
+        return this.getLetter() === 'd';
+    }
+
+    isAugmented() {
+        return this.getLetter() === 'A';
+    }
+
+    isAltered() {
+        return this.isDiminished() || this.isAugmented();
+    }
+
+    getName() {
+        return this.data.name;
+    }
+
+    getSteps() {
+        return this.data.steps;
+    }
+
+    getDegree() {
+        return this.data.degree;
     }
 
     getNote(root) {
