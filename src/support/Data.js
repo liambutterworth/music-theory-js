@@ -55,24 +55,6 @@ export default {
         }
     },
 
-    degrees: {
-        all() {
-            return data.degrees;
-        },
-
-        find(symbol) {
-            return this.all().find(degree => degree.symbol === symbol);
-        },
-
-        findByInterval(interval) {
-            return this.all().find(degree => degree.interval === interval);
-        },
-
-        findByArray(symbols) {
-            return symbols.map(symbol => this.find(symbol));
-        },
-    },
-
     chords: {
         all() {
             return data.chords;

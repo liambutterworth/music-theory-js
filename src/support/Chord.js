@@ -1,5 +1,4 @@
 import Data from './Data';
-import Degrees from './Degrees';
 import Note from './Note';
 
 class Chord {

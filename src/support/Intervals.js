@@ -1,4 +1,3 @@
-// import Degrees from './Degrees';
 import Interval from './Interval';
 import Notes from './Notes';
 

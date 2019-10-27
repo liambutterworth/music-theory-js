@@ -1,5 +1,4 @@
 import Data from './Data';
-import Degree from './Degree';
 import Note from './Note';
 
 class Interval {

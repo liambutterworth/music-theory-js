@@ -14,21 +14,6 @@
         { "symbols": ["B", "Cb", "A##"], "type": "natural" }
     ],
 
-    "notes_old": [
-        { "symbols": ["C", "Dbb", "B#"], "type": "natural" },
-        { "symbols": ["Db", "C#"], "type": "accidental" },
-        { "symbols": ["D", "Ebb", "C##"], "type": "natural" },
-        { "symbols": ["Eb", "D#"], "type": "accidental" },
-        { "symbols": ["E", "Fb", "D##"], "type": "natural" },
-        { "symbols": ["F", "Gbb", "E#"], "type": "natural" },
-        { "symbols": ["Gb", "F#"], "type": "accidental" },
-        { "symbols": ["G", "Abb", "F##"], "type": "natural" },
-        { "symbols": ["Ab", "G#"], "type": "accidental" },
-        { "symbols": ["A", "Bbb", "G##"], "type": "natural" },
-        { "symbols": ["Bb", "A#"], "type": "accidental" },
-        { "symbols": ["B", "Cb", "A##"], "type": "natural" }
-    ],
-
 
     "intervals": [
         { "symbol": "P1", "degree": "1", "name": "Perfect Unison", "steps": 0 },
@@ -57,30 +42,6 @@
         { "symbol": "A5", "degree": "#5", "name": "Augmented Fifth", "steps": 8 },
         { "symbol": "A6", "degree": "#6", "name": "Augmented Sixth", "steps": 10 },
         { "symbol": "A7", "degree": "#7", "name": "Augmented Seventh", "steps": 12 }
-    ],
-
-    "degrees": [
-        { "symbol": "1", "interval": "P1" },
-        { "symbol": "#1", "interval": "A1" },
-        { "symbol": "b2", "interval": "m2" },
-        { "symbol": "2", "interval": "M2" },
-        { "symbol": "#2", "interval": "A2" },
-        { "symbol": "b3", "interval": "m3" },
-        { "symbol": "3", "interval": "M3" },
-        { "symbol": "#3", "interval": "A3" },
-        { "symbol": "b4", "interval": "d4" },
-        { "symbol": "4", "interval": "P4" },
-        { "symbol": "#4", "interval": "A4" },
-        { "symbol": "b5", "interval": "d5" },
-        { "symbol": "5", "interval": "P5" },
-        { "symbol": "#5", "interval": "A5" },
-        { "symbol": "b6", "interval": "m6" },
-        { "symbol": "6", "interval": "M6" },
-        { "symbol": "#6", "interval": "A6" },
-        { "symbol": "bb7", "interval": "d7" },
-        { "symbol": "b7", "interval": "m7" },
-        { "symbol": "7", "interval": "M7" },
-        { "symbol": "#7", "interval": "A7" }
     ],
 
     "chords": [
